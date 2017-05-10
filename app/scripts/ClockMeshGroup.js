@@ -5,15 +5,9 @@ class ClockMeshGroup {
         // 秒のマテリアルに関するパラメータ
         this.MATERIAL_PARAMETER = {
             color: 0xF7D533,
-            //specular: 0x999999,
-            //shininess: 30
-            //roughness: 0,
-            metalness: 0.5,
-
+            metalness: 0.5
         };
 
-        //this.material = new THREE.MeshPhongMaterial(this.MATERIAL_PARAMETER);
-        // this.geometry = new THREE.SphereGeometry(0.01, 10, 10);
         this.material = new THREE.MeshStandardMaterial(this.MATERIAL_PARAMETER);
         this.geometry = new THREE.BoxGeometry(0.015, 0.015, 0.015);
         this.index = index;

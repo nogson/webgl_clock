@@ -90,15 +90,6 @@
         //時計の部品シーンに追加
         scene.add(clockMesheGroup);
 
-        //地面を作成
-        // let groundMaterial = new THREE.MeshLambertMaterial(GROUND_MATERIAL);
-        // let groundGeometry = new THREE.PlaneGeometry(100, 100);
-        // let ground = new THREE.Mesh(groundGeometry, groundMaterial);
-        // ground.rotation.x = Math.PI / 2;
-        // ground.position.y = 0;
-        // ground.receiveShadow = true;
-        //scene.add(ground);
-
         //ライト
         directional = new THREE.DirectionalLight(0xffffff);
         ambient = new THREE.AmbientLight(0xffffff, 0.25);
@@ -124,7 +115,6 @@
         //描画
         function render() {
             let currentTime = getTime(); //現在時刻
-            //let currentSecond = Math.floor(currentTime.ms / (1000 / 60)); //現在の秒数
             let currentHour = currentTime.h % 12 * 5;
             if (oldTime === void(0)) {
                 sphereInstance[currentTime.m].startMinuteAnimation();
@@ -135,10 +125,6 @@
             if (!introAnimationParam.isCompAnimePos || !introAnimationParam.isCompAnimeRotation) {
                 introAnimation();
             } else {
-
-                // let particle = new Particle();
-                // scene.add(particle.create());
-                //sphereInstance[currentTime.s].scaleUp();
 
                 //秒を更新時に実行
                 if (oldTime.s !== currentTime.s) {
